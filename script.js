@@ -11,9 +11,7 @@ class CaesarCipher {
             let charCode = lowercase[i].charCodeAt();
             let char = String.fromCharCode(charCode + this.rotation % length);
             if (char < 'a' || char > 'z') {
-                let x = length;
                 char = String.fromCharCode(char.charCodeAt() - length);
-                x += 1;
                 rotationMap[lowercase[i]] = char;
                 rotationMap[lowercase[i].toUpperCase()] = char.toUpperCase();
             } else {
