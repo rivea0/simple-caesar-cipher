@@ -4,28 +4,20 @@ let encrypt = document.querySelector('#encrypt');
 let decrypt = document.querySelector('#decrypt');
 let text = document.querySelector('#text');
 let shift = document.querySelector('#rotation');
+let buttons = [encrypt, decrypt];
 
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', displayResult);
+}
 
-encrypt.addEventListener('click', () => {
-    if (document.querySelector('.result').hasChildNodes()) {
-        document.querySelector('.result').style.display = none;
+function displayResult() {
+    let resultArea = document.querySelector('.result');
+    if (resultArea.hasChildNodes()) {
+        resultArea.removeChild(resultArea.childNodes[0]);
     }
     let code = new CaesarCipher(parseInt(shift.value));
     let result = code.rotate(text.value);
     let p = document.createElement('p');
-    p.textContent = result;
-    document.querySelector('.result').append('Result:');
-    document.querySelector('.result').append(p);
-});
-
-decrypt.addEventListener('click', () => {
-    if (document.querySelector('.result').hasChildNodes()) {
-        document.querySelector('.result').style.display = none;
-    }
-    let code = new CaesarCipher(parseInt(shift.value));
-    let result = code.rotate(text.value);
-    let p = document.createElement('p');
-    p.textContent = result;
-    document.querySelector('.result').append('Result:');
-    document.querySelector('.result').append(p);
-});
+    resultArea.appendChild(p);
+    p.textContent = `Result: ${result}`;
+}
