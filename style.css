@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 21px;
+}
+
+header, .content, .buttons, .result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1.5em;
+}
+
+header, .content {
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: lightslategrey;
+}
+
+h1 {
+    font-size: 52px;
+}
+
+button {
+    border: 1px solid #00ff7f;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #1b1b1b;
+}
+
+.result, p {
+    font-size: 32px;
+    color: mediumspringgreen;
+}
+
+p {
+    color: snow;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+textarea, #rotation {
+    padding: 15px;
+    border-color: #bbbbbb;
+}
+
+
+/* Hide the arrows of number input */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+-moz-appearance: textfield;
+}
+
+
+textarea:focus, #rotation:focus {
+    border-color: #7f00ff;
+}
