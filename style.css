@@ -7,7 +7,7 @@
     font-size: 21px;
 }
 
-header, .content, .buttons, .result {
+header, .content, .buttons, .result, .links, .footer-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +19,29 @@ header, .content, .buttons, .result {
 header, .content {
     flex-direction: column;
 }
+
+.copyright {
+    font-size: 15px;
+}
+
+.footer-text {
+    padding-top: .5em;
+}
+
+.links {
+    padding-top: 85px;
+    padding-bottom: 12px;
+}
+
+.result {
+    border: 1px dashed #00ff7f;
+    margin-right: 5em;
+    margin-left: 5em;
+}
+
+#text {
+    width: 100%;
+} 
 
 a {
     text-decoration: none;
@@ -36,12 +59,8 @@ button {
     background-color: #1b1b1b;
 }
 
-.result, p {
-    font-size: 32px;
-    color: mediumspringgreen;
-}
-
 p {
+    font-size: 32px;
     color: snow;
 }
 
@@ -54,9 +73,11 @@ textarea, #rotation {
     border-color: #bbbbbb;
 }
 
+textarea:focus, #rotation:focus {
+    border-color: #7f00ff;
+}
 
 /* Hide the arrows of number input */
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 -webkit-appearance: none;
@@ -64,9 +85,4 @@ input::-webkit-inner-spin-button {
 }
 input[type=number] {
 -moz-appearance: textfield;
-}
-
-
-textarea:focus, #rotation:focus {
-    border-color: #7f00ff;
 }
