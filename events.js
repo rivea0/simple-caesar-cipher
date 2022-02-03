@@ -10,12 +10,15 @@ encrypt.addEventListener('click', () => {
     if (resultArea.hasChildNodes()) {
         resultArea.removeChild(resultArea.childNodes[0]);
     } 
-    let p = document.createElement('p');
-    let code = new CaesarCipher(parseInt(shift.value));
-    let result = code.encrypt(text.value);
-    console.log(result);
-    resultArea.appendChild(p);
-    p.textContent = result;    
+    if (!shift.value) {
+        return;
+    } else {
+        let p = document.createElement('p');
+        let code = new CaesarCipher(parseInt(shift.value));
+        let result = code.encrypt(text.value);
+        resultArea.appendChild(p);
+        p.textContent = result;    
+    }
 });
 
 decrypt.addEventListener('click', () => {
@@ -23,9 +26,13 @@ decrypt.addEventListener('click', () => {
     if (resultArea.hasChildNodes()) {
         resultArea.removeChild(resultArea.childNodes[0]);
     } 
-    let p = document.createElement('p');
-    let code = new CaesarCipher(parseInt(shift.value));
-    let result = code.decrypt(text.value); 
-    resultArea.appendChild(p);
-    p.textContent = result;        
+    if (!shift.value) {
+        return;
+    } else {
+        let p = document.createElement('p');
+        let code = new CaesarCipher(parseInt(shift.value));
+        let result = code.decrypt(text.value);
+        resultArea.appendChild(p);
+        p.textContent = result;    
+    }
 });
